@@ -73,13 +73,22 @@
     <footer>
         <p>©copy; 2025 Todos los derechos reservados </p>
     </footer>
-<script>
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
     
-        burger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+    
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
         });
-</script>
+    </script>
+    
 </body>
 </html>
