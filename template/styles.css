@@ -143,6 +143,7 @@ button {
     padding: 2rem;
     text-align: justify;
     background-color:  #8b5e3b;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     color: white;
 }
 
