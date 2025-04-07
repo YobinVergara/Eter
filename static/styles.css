@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Cinzel', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f3e8;
+    color: #4a3f35;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color:  #8b5e3b;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover{
+    color: gold;
+}
+
+.burger{
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.burger span{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/*Página principal*/
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0; /* Eliminamos el padding que agranda verticalmente */
+    overflow: hidden; /* Oculta cualquier desborde si lo hay */
+}
+
+.hero-section img {
+    width: 100%;       /* Abarca todo el ancho */
+    height: 900px;      /* Mantiene proporción */
+    display: block;    /* Elimina espacio indeseado abajo de la imagen */
+}
+
+
+/*Seccion de tarjeta*/
+.cards-container{
+    padding: 3rem;
+    background-color: white;
+}
+.cards-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: black;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5rem;
+}
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0,0,0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+    color: black;
+}
+.card img {
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #8b5e3b;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+.card h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+.card p {
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+}
+
+
+@keyframes spin{
+    0%{
+        transform: translate(-50%, 50%)rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, 50%)rotate(360deg);
+    }
+}
+/*Sección contacto */
+.contact-section {
+    padding: 2rem;
+    text-align: justify;
+    background-color:  #8b5e3b;
+    color: white;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:  #8b5e3b;
+    color: #ffffff;
+    gap: 3rem; /* Espaciado entre los elementos */
+}
+
+.contact-item {
+   padding: 0.5rem;
+   flex: 2; /* Ocupa menos espacio */
+}
+
+
+.contact-item h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+
+.contact-item p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: justify;
+}
+
+footer {
+    padding: 1rem;
+    background-color:  #8b5e3b;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+}
