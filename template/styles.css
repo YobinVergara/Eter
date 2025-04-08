@@ -20,6 +20,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    position: relative;
 
 }
 
@@ -33,6 +34,7 @@ body {
     list-style: none;
     display: flex;
     gap: 1rem;
+    z-index: 999;
 }
 
 .nav-links a{
@@ -50,6 +52,8 @@ body {
     flex-direction: column;
     gap: 0.3rem;
     cursor: pointer;
+    z-index: 1000;
+    position: relative;
 }
 
 .burger span{
