@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrarse | Éter</title>
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-icon">
+            <i class="fas fa-user-plus fa-3x"></i>
+        </div>
+        <h2>Crear Cuenta</h2>
+        <form action="login.html" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <input type="text" name="usuario" placeholder="Nombre de usuario" required>
+            <input type="password" name="clave" placeholder="Contraseña" required>
+            <input type="password" name="confirmar_clave" placeholder="Confirmar contraseña" required>
+            <button type="submit">Registrarse</button>
+        </form>
+        <div class="login-links">
+            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+        </div>
+    </div>
+</body>
+</html>

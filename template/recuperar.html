@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar Contraseña | Éter</title>
+    <link rel="stylesheet" href="recuperar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-icon">
+            <i class="fas fa-unlock-alt fa-3x"></i>
+        </div>
+        <h2>Recuperar Contraseña</h2>
+        <form action="/recuperar" method="POST">
+            <input type="email" name="correo" placeholder="Ingresa tu correo" required>
+            <button type="submit">Enviar enlace de recuperación</button>
+        </form>
+        <div class="login-links">
+            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+            <p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+        </div>
+    </div>
+</body>
+</html>
