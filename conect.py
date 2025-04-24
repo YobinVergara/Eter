@@ -1,42 +1,32 @@
-from flask import Flask, render_template, request, redirect, url_for
-from pymongo import MongoClient
-
-print("Activo")
+from flask import Flask, render_template, request, redirect, flash, url_for
 
 app = Flask(__name__)
-
-# Conectar a MongoDB Atlas
-client = MongoClient("mongodb+srv://yobinvergara:1006037426yobin@cluster0.hgxyeef.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-db = client['eter']
-usuarios = db['usuarios']
+app.secret_key = 'mi_clave_secreta'  # Necesaria para usar flash
 
 @app.route('/')
-def home():
-    return render_template('index.html')
+def index():
+    return redirect(url_for('login'))
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    usuario_input = request.form['usuario']
-    clave_input = request.form['clave']
+    if request.method == 'POST':
+        usuario = request.form['usuario']
+        clave = request.form['clave']
+        
+        # Aquí deberías validar el usuario y contraseña
+        if usuario == "admin" and clave == "1234":
+            flash('¡Inicio de sesión exitoso!', 'success')
+            return redirect(url_for('dashboard'))
+        else:
+            flash('Usuario o contraseña incorrectos.', 'error')
+            return redirect(url_for('login'))
 
-    print("Usuario ingresado:", usuario_input)
-    print("Contraseña ingresada:", clave_input)
+    return render_template('login.html')
 
-    # Verificamos si el usuario existe
-    usuario_encontrado = usuarios.find_one({
-        "$or": [
-            {"usuario": usuario_input},
-            {"correo": usuario_input}
-        ],
-        "clave": clave_input
-    })
-
-    if usuario_encontrado:
-        print("✅ Usuario autenticado correctamente.")
-        return redirect(url_for('home'))  # O redirige donde quieras
-    else:
-        print("❌ Usuario o contraseña incorrectos.")
-        return "Usuario o contraseña incorrectos", 401
+@app.route('/dashboard')
+def dashboard():
+    return '<h1>Bienvenido al dashboard</h1>'
 
 if __name__ == '__main__':
     app.run(debug=True)
+
